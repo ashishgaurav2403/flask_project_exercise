@@ -6,6 +6,6 @@ main = Blueprint('main', __name__)
 def index():
     return render_template('index.html')
 
-@main.route('/profile')
+@main.route('/profile') 
 def profile():
-    return render_template('profile.html')
+    return render_template('profile.html')  

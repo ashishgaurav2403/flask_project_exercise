@@ -9,3 +9,5 @@ def create_app():
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
     return app
+
+    app.run(debug=True)
