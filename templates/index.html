@@ -1,11 +1,18 @@
-{% extends "base.html" %} {% block head %} {{ super() }}
+{% extends "base.html" %} {% block head %} {{ super() }}  
+
+
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename= 'extended_beauty.css') }}"
 />
-{% endblock %}
- {% block content %} 
+{% endblock %} {% block content %} 
 <h1>Index</h1>
 <p class="important">
   Welcome on my awesome homepage.
 {% endblock %}
+
+
+<!-- In Flask, super() is used to call the parent class method. It is used in the context of template inheritance to render the contents of a block defined in the parent template. To do this, you use { { super () }} -->
+<!--  extends 'base.html'  tells Jinja that this template should replace the blocks from the base template. All the rendered content must appear inside  block  tags that override blocks from the base template. -->
+
+<!-- A useful pattern used here is to place block title inside block header . This will set the title block and then output the value of it into the header block, so that both the window and page share the same title without writing it twice.  -->

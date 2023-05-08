@@ -1,10 +1,49 @@
 {% extends "base.html" %} {% block head %} {{ super() }}
-<!-- In Flask, super() is used to call the parent class method. It is used in the context of template inheritance to render the contents of a block defined in the parent template. To do this, you use { { super () }} -->
-<!-- {% extends 'base.html' %} tells Jinja that this template should replace the blocks from the base template. All the rendered content must appear inside {% block %} tags that override blocks from the base template.
-
-A useful pattern used here is to place {% block title %} inside {% block header %}. This will set the title block and then output the value of it into the header block, so that both the window and page share the same title without writing it twice. -->
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename= 'extended_beauty.css') }}"
 />
+{% endblock %} {% block content %}
+<div class="col-md-4 col-md-offset-4">
+  <form method="POST" action="/signup">
+    <h2>Sign Up</h2>
+    <!-- {% with messages = get_flashed_messages() %} {% if messages %} -->
+    <div class="notification is-danger">
+      <!-- {{ messages[0] }}. Go to -->
+      <a href="#">login page</a>.
+    </div>
+    <!-- {% endif %} {% endwith %} -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter full name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
 {% endblock %}

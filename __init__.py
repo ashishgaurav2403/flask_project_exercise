@@ -11,3 +11,5 @@ def create_app():
     return app
 
     app.run(debug=True)
+
+# to run the app : flask --app flask_project_exercise run --debug
