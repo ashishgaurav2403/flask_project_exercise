@@ -46,4 +46,4 @@ def create_app():
 
 # to run the app : flask --app flask_project_exercise run --debug
 
-create_app()
+# create_app()
